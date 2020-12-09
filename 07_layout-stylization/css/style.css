@@ -1,3 +1,35 @@
+@font-face {
+	font-family: 'Muller';
+	src: url('../fonts/MullerMedium.woff2') format('woff2'),
+		url('../fonts/MullerMedium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Muller';
+	src: url('../fonts/MullerRegular.woff2') format('woff2'),
+		url('../fonts/MullerRegular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Muller';
+	src: url('../fonts/MullerBold.woff2') format('woff2'),
+		url('../fonts/MullerBold.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Muller';
+	src: url('../fonts/MullerLight.woff2') format('woff2'),
+		url('../fonts/MullerLight.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+}
+
 * {
   margin: 0;
 	padding: 0;
@@ -28,8 +60,15 @@ input {
   outline: none;
 }
 
+::-webkit-input-placeholder,
+::-webkit-datetime-edit-month-field,
+::-webkit-datetime-edit-day-field,
+::-webkit-datetime-edit-year-field {
+  color: #999;
+}
+
 html {
-  font-family: sans-serif;
+  font-family: 'Muller', sans-serif;
 }
 
 .container {
@@ -47,13 +86,29 @@ html {
   align-items: center;
 }
 
+.header-top__logo {
+  margin-right: 27px;
+}
+
 .header-top__login-link {
   margin-left: auto;
   margin-right: 10px;
+  padding-left: 34px;
+  background-image: url(../img/arrow_lk.png);
+  background-size: 27px auto;
+  background-repeat: no-repeat;
+  background-position: left center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  color: #cc9933;
 }
 
 .header-top__phone-link {
-  margin-left: 27px;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 32px;
+  color: #666;
 }
 
 .header-bottom {
@@ -65,9 +120,21 @@ html {
   background-color: #fff;
 }
 
+.nav {
+  margin-left: 20px;
+}
+
 .nav__list {
   display: flex;
-  margin-left: 20px;
+}
+
+.nav__item {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.nav__link {
+  color: #333;
 }
 
 .nav__item:not(:last-child) {
@@ -102,6 +169,10 @@ html {
 .section-heading {
   padding-left: 40px;
   margin-bottom: 23px;
+  font-size: 40px;
+  font-weight: normal;
+  line-height: 1;
+  color: #333;
 }
 
   /* section "form-booking" */
@@ -120,9 +191,11 @@ html {
 }
 
 .form-booking__buton {
-  padding: 27px 31px;
   margin-right: 30px;
+  width: 159px;
+  height: 70px;
   font-size: 16px;
+  font-weight: bold;
   line-height: 1;
   color: white;
   background-color: #cc9933;
@@ -130,6 +203,15 @@ html {
   border-radius: 12px;
   cursor: pointer;
 }
+
+.form-booking__info-offers {
+  color: #999;
+}
+
+.form-booking__count-offers {
+  color: #cc9933;
+}
+
 
   /* section "specialoffer" */
 
@@ -142,7 +224,7 @@ html {
 
 .section-specialoffer__desc {
   position: absolute;
-  bottom: 30px;
+  bottom: 40px;
   left: 45px;
   display: inline-block;
   max-width: 65%;
@@ -151,8 +233,9 @@ html {
 .section-specialoffer-desc__heading {
   margin-bottom: 40px;
   color: white;
-  font-size: 58px;
-  line-height: 54px;
+  font-size: 66px;
+  font-weight: bold;
+  line-height: 58px;
 }
 
 .section-specialoffer-desc__price {
@@ -175,11 +258,14 @@ html {
 
 .section-about {
   margin-bottom: 55px;
+  clear: both;
 }
 
 .section-about-desc {
-  width: 894px;
   padding-left: 40px;
+  width: 925px;
+  line-height: 32px;
+  color: #666;
 }
 
 /* section "services" */
@@ -193,14 +279,16 @@ html {
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: space-between;
-  min-height: 674px;
+  margin-bottom: -24px;
 }
 
 .section-services__item {
-  /* flex-basis: 572px; */
   flex-basis: calc(50% - 12px);
+  margin-bottom: 24px;
+  padding-bottom: 40px;
   min-height: 325px;
-  /* outline: 2px solid red; */
+  background-color: #fff;
+  border-radius: 12px;
 }
 
 .section-services-item__image {
@@ -210,19 +298,24 @@ html {
 .section-services-item__title {
   padding-left: 43px;
   margin-bottom: 13px;
+  font-size: 22px;
 }
 
 .section-services-item__link {
   padding-right: 20px;
+  font-weight: 500;
+  color: #cc9933;
   background-image: url(../img/arrow.png);
-  background-size: contain;
+  background-size: 9px 18px;
   background-repeat: no-repeat;
   background-position: right center;
 }
 
 .section-services-item__desc {
   padding-left: 43px;
-  width: 71%;
+  width: 76%;
+  line-height: 32px;
+  color: #333;
 }
 
 /* section "advantages" */
@@ -236,16 +329,18 @@ html {
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: space-between;
-  min-height: 574px;
+  margin-bottom: -24px;
 }
 
 .section-advantages__item {
-  /* flex-basis: 275px; */
   flex-basis: calc(25% - 17px);
+  margin-bottom: 24px;
+  padding: 120px 47px 42px 42px;
   min-height: 275px;
-  /* outline: 2px solid red; */
-  padding-top: 120px;
-  padding-left: 42px;
+  line-height: 32px;
+  color: #333;
+  border-radius: 12px;
+  background-color: #fff;
   background-size: auto 60px;
   background-repeat: no-repeat;
   background-position: 42px 40px;
@@ -287,14 +382,14 @@ html {
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: space-between;
-  min-height: 1373px;
+  margin-bottom: -25px;
 }
 
 .section-accommodation__item {
-  /* flex-basis: 373px; */
   flex-basis: calc(33.33% - 16px);
-  min-height: 441px;
-  /* outline: 1px solid red; */
+  margin-bottom: 25px;
+  background-color: #fff;
+  border-radius: 12px;
 }
 
 .section-accommodation__item:last-child {
@@ -302,35 +397,58 @@ html {
 }
 
 .section-accommodation-item__image {
+  display: block;
   margin-bottom: 36px;
 }
 
 .section-accommodation-item__desc {
+  margin-bottom: 15px;
   padding-left: 44px;
+  padding-right: 40px;
+  line-height: 28px;
+  color: #999;
+}
+
+.section-accommodation-item__price {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
 }
 
 .section-accommodation-item__unit {
   margin-right: 35px;
+  color: #333;
 }
 
 .section-accommodation-item__hotel-name {
-  line-height: 47px;
+  color: #333;
 }
 
 .section-accommodation-item__btn-link {
+  display: inline-block;
+  margin-bottom: 43px;
+  margin-left: 42px;
+  padding: 12px 19px;
+  font-weight: bold;
+  color: #cc9933;
+  border-radius: 12px;
+  border: 1px solid #cc9933;
+}
+
+.section-accommodation-item__image-all-variant {
   display: block;
-  margin-top: 30px;
 }
 
 .section-accommodation-item__link-all-variant {
   position: absolute;
   left: 40px;
   bottom: 55px;
-  color: white;
+  font-size: 22px;
+  font-weight: 500;
+  color: #fff;
   padding-right: 20px;
   background-image: url(../img/arrow_white.png);
   background-size: auto 16px;
   background-repeat: no-repeat;
   background-position: right center;
-
 }
