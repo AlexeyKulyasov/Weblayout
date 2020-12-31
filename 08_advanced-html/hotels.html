@@ -36,19 +36,21 @@
       </div>
     </header>
 
-    <main>
+    <main class="main">
       <section class="form-booking">
         <h2 class="section-heading">Быстрая бронь</h2>
-        <input class="form-booking__input" type="text" aria-label="Город" placeholder="Город">
-        <input class="form-booking__input" type="text" aria-label="Категория номера" placeholder="Категория номера">
-        <input class="form-booking__input" type="date" aria-label="Дата заселения" placeholder="Дата заселения">
-        <input class="form-booking__input" type="number" aria-label="Количество ночей" placeholder="Количество ночей">
-        <input class="form-booking__input" type="number" aria-label="Количество гостей" placeholder="Количество гостей">
-        <button class="form-booking__buton">Найти номер</button>
-        <span class="form-booking__info-offers">
-          <span class="form-booking__count-offers">9 756</span>
-          предложений доступно
-        </span>
+        <form action="https://jsonplaceholder.typicode.com/posts" method="POST">
+          <input class="form-booking__input" required type="text" name="city" aria-label="Город" placeholder="Город">
+          <input class="form-booking__input" type="text" name="class hotel room" aria-label="Категория номера" placeholder="Категория номера">
+          <input class="form-booking__input" type="date" name="date" aria-label="Дата заселения" placeholder="Дата заселения">
+          <input class="form-booking__input" type="number" name="number_of_nights" aria-label="Количество ночей" placeholder="Количество ночей">
+          <input class="form-booking__input" type="number" name="number_of_guests" aria-label="Количество гостей" placeholder="Количество гостей">
+          <button class="btn-submit form-booking__btn" type="submit">Найти номер</button>
+          <span class="form-booking__info-offers">
+            <span class="form-booking__count-offers">9 756</span>
+            предложений доступно
+          </span>
+        </form>
       </section>
       <section class="section-specialoffer">
         <h2 class="section-heading">Спецпредложение</h2>
@@ -144,7 +146,7 @@
               <br>
               Барселона, Испания
             </div>
-            <a href="" class="section-accommodation-item__btn-link">Номера</a>
+            <a href="" class="btn-link section-accommodation-item__btn">Номера</a>
           </li>
           <li class="section-accommodation__item section-accommodation-item">
             <img src="./img/24.jpg" alt="Отель Lagoona son típicas" class="section-accommodation-item__image">
@@ -162,7 +164,7 @@
               <br>
               Барселона, Испания
             </div>
-            <a href="" class="section-accommodation-item__btn-link">Номера</a>
+            <a href="" class="btn-link section-accommodation-item__btn">Номера</a>
           </li>
           <li class="section-accommodation__item section-accommodation-item">
             <img src="./img/26.jpg" alt="Отель Lagoona de la guerra" class="section-accommodation-item__image">
@@ -180,7 +182,7 @@
               <br>
               Барселона, Испания
             </div>
-            <a href="" class="section-accommodation-item__btn-link">Номера</a>
+            <a href="" class="btn-link section-accommodation-item__btn">Номера</a>
           </li>
           <li class="section-accommodation__item section-accommodation-item">
             <img src="./img/32.jpg" alt="Отель Lagoona mentira piadosa" class="section-accommodation-item__image">
@@ -198,7 +200,7 @@
               <br>
               Барселона, Испания
             </div>
-            <a href="" class="section-accommodation-item__btn-link">Номера</a>
+            <a href="" class="btn-link section-accommodation-item__btn">Номера</a>
           </li>
           <li class="section-accommodation__item section-accommodation-item">
             <img src="./img/30.jpg" alt="Отель Lagoona empujar la creatividad" class="section-accommodation-item__image">
@@ -216,7 +218,7 @@
               <br>
               Барселона, Испания
             </div>
-            <a href="" class="section-accommodation-item__btn-link">Номера</a>
+            <a href="" class="btn-link section-accommodation-item__btn">Номера</a>
           </li>
           <li class="section-accommodation__item section-accommodation-item">
             <img src="./img/31.jpg" alt="Отель Lagoona el retorno" class="section-accommodation-item__image">
@@ -234,7 +236,7 @@
               <br>
               Барселона, Испания
             </div>
-            <a href="" class="section-accommodation-item__btn-link">Номера</a>
+            <a href="" class="btn-link section-accommodation-item__btn">Номера</a>
           </li>
           <li class="section-accommodation__item section-accommodation-item">
             <img src="./img/27.jpg" alt="Отель Lagoona enfermo terminó" class="section-accommodation-item__image">
@@ -252,7 +254,7 @@
               <br>
               Барселона, Испания
             </div>
-            <a href="" class="section-accommodation-item__btn-link">Номера</a>
+            <a href="" class="btn-link section-accommodation-item__btn">Номера</a>
           </li>
           <li class="section-accommodation__item section-accommodation-item">
             <img src="./img/29.jpg" alt="Отель Lagoona suerte siguió siempre" class="section-accommodation-item__image">
@@ -270,7 +272,7 @@
               <br>
               Барселона, Испания
             </div>
-            <a href="" class="section-accommodation-item__btn-link">Номера</a>
+            <a href="" class="btn-link section-accommodation-item__btn">Номера</a>
           </li>
           <li class="section-accommodation__item section-accommodation-item">
             <img src="./img/41.jpg" alt="Все варианты отелей" class="section-accommodation-item__image-all-variant">
@@ -278,7 +280,98 @@
           </li>
         </ul>
       </section>
+      <div class="contacts-write_to_us">
+        <section class="section-contacts">
+          <h2 class="section-heading">Контакты</h2>
+          <div class="container-contacts">
+            <ul class="section-contacts__list">
+              <li class="section-contacts__item">
+                <span class="section-contacts__title">Адрес</span>
+                <address class="section-contacts__info">Москва, улица Юности, дом 5 строение 4, офис 2</address>
+              </li>
+              <li class="section-contacts__item">
+                <span class="section-contacts__title">Телефоны</span>
+                <div class="section-contacts__info">
+                  <a class="section-contacts__link" href="tel:+74995356434">+7 (499) 535-64-34</a>
+                  <br>
+                  <a class="section-contacts__link" href="tel:+74950050544">+7 (495) 005-05-44</a>
+                </div>
+              </li>
+              <li class="section-contacts__item">
+                <span class="section-contacts__title">E-mail</span>
+                <div class="section-contacts__info section-contacts__info--color">
+                  <a class="section-contacts__link" href="mailto:lg.oona@mail.ru">lg.oona@mail.ru</a> по вопросам бронирования
+                  <a class="section-contacts__link" href="mailto:hotels.ln@mail.ru">hotels.ln@mail.ru</a> по вопросам сотрудничества
+                </div>
+              </li>
+              <li class="section-contacts__item">
+                <span class="section-contacts__title">График</span>
+                <div class="section-contacts__info">
+                  Понедельник - пятница,<br>с 10:0 до 19:00
+                </div>
+              </li>
+            </ul>
+            <a class="btn-link section-contacts__btn" href="">Построить маршрут</a>
+          </div>
+        </section>
+        <section class="section-write_to_us">
+          <h2 class="section-heading section-write_to_us__heading">Напишите нам</h2>
+          <form class="section-write_to_us__form" action="https://jsonplaceholder.typicode.com/posts" method="POST">
+            <input class="section-write_to_us__input" type="text" name="username" aria-label="Имя" placeholder="Имя">
+            <input class="section-write_to_us__input" required type="tel" name="phone" aria-label="Телефон" placeholder="+7">
+            <textarea class="section-write_to_us__textarea" name="message" aria-label="Сообщение..." cols="30" rows="6" placeholder="Сообщение..."></textarea>
+            <button class="btn-submit section-write_to_us__btn" type="submit">Отправить</button>
+          </form>
+        </section>
+      </div>
     </main>
+    <footer class="footer">
+      <div class="footer-left">
+        © 2012-2020 Управляющая компания Объединенной сети «Лагуна Хотелс»
+        <br><br>
+        Представленная на сайте информация носит справочный характер<br> и не является публичной офертой
+        <br><br>
+        <a href="">Политика конфиденциальности</a>
+      </div>
+      <div class="footer-right">
+        <address class="footer-right__address">1710, улица Юности, дом 5 строение 4, офис 2</address>
+        <br>
+        <a href="tel:+74995356434">+7 (499) 535-64-34</a>
+        <br>
+        <a href="tel:+74950050544">+7 (495) 005-05-44</a>
+        <br><br>
+        <a href="mailto:lg.oona@mail.ru">lg.oona@mail.ru</a>
+        <br>
+        <a href="mailto:hotels.ln@mail.ru">hotels.ln@mail.ru</a>
+      </div>
+      <ul class="footer__social-list">
+        <li class="footer__social-item">
+          <a href="">
+            <span class="footer__social-icon icon-tripadvisor"></span>
+          </a>
+        </li>
+        <li class="footer__social-item">
+          <a href="">
+            <span class="footer__social-icon icon-twitter"></span>
+          </a>
+        </li>
+        <li class="footer__social-item">
+          <a href="">
+            <span class="footer__social-icon icon-facebook"></span>
+          </a>
+        </li>
+        <li class="footer__social-item">
+          <a href="">
+            <span class="footer__social-icon icon-vk"></span>
+          </a>
+        </li>
+        <li class="footer__social-item">
+          <a href="">
+            <span class="footer__social-icon icon-google"></span>
+          </a>
+        </li>
+      </ul>
+    </footer>
   </div>
 </body>
 </html>
