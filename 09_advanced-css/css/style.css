@@ -30,6 +30,13 @@
 	font-style: normal;
 }
 
+:root {
+  --orange-color: #cc9933;
+  --white-color: #fff;
+  --color-content-1: #333;
+  --color-content-2: #999;
+}
+
 * {
   margin: 0;
 	padding: 0;
@@ -41,8 +48,29 @@ body {
 }
 
 a {
+  display: inline-block;
   text-decoration: none;
-  color: #cc9933;
+  color: var(--orange-color);
+}
+
+.link-decoration::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: var(--orange-color);
+  opacity: 0;
+  transition: opacity .3s;
+}
+
+.link-contact-decoration::after {
+  position: relative;
+  bottom: 5px;
+  height: 1px;
+}
+
+.link-decoration:hover::after {
+  opacity: 1;
 }
 
 ul {
@@ -70,7 +98,7 @@ input, textarea {
 ::-webkit-datetime-edit-month-field,
 ::-webkit-datetime-edit-day-field,
 ::-webkit-datetime-edit-year-field {
-  color: #999;
+  color: var(--color-content-2);
 }
 
 html {
@@ -89,10 +117,23 @@ html {
   height: 70px;
   font-weight: bold;
   color: white;
-  background-color: #cc9933;
+  background-color: var(--orange-color);
   border: 0;
   border-radius: 12px;
   cursor: pointer;
+  transition-property: transform, box-shadow, background-color;
+  transition-duration: .3s;
+}
+
+.btn-submit:hover {
+  background: rgba(0,0,0,0);
+	color:var(--orange-color);
+  box-shadow: inset 0 0 0 3px var(--orange-color);
+}
+
+.btn-submit:active {
+  outline: none;
+  transform: scale(0.99);
 }
 
   /* HEADERS */
@@ -119,7 +160,6 @@ html {
   background-size: 27px auto;
   background-repeat: no-repeat;
   background-position: left center;
-  font-size: 16px;
   font-weight: 500;
   line-height: 1;
 }
@@ -131,12 +171,16 @@ html {
   color: #666;
 }
 
+.header-top__phone-link:hover {
+  opacity: 0.8;
+}
+
 .header-bottom {
   display: flex;
   align-items: center;
   height: 70px;
   border-radius: 12px;
-  background-color: #fff;
+  background-color: var(--white-color);
 }
 
 .nav {
@@ -153,7 +197,30 @@ html {
 }
 
 .nav__link {
-  color: #333;
+  position: relative;
+  color: var(--color-content-1);
+  transition: color .6s;
+}
+
+.nav__link:hover {
+  color: var(--orange-color);
+}
+
+.nav__link::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  transition-property: left, width;
+  transition-duration: .4s;
+}
+
+.nav__link:hover::before {
+  left: 0;
+  width: 100%;
+  background: var(--orange-color);
 }
 
 .nav__item:not(:last-child) {
@@ -191,7 +258,7 @@ html {
   margin-bottom: 23px;
   font-size: 40px;
   font-weight: normal;
-  color: #333;
+  color: var(--color-content-1);
 }
 
 .main {
@@ -216,11 +283,11 @@ html {
 }
 
 .form-booking__info-offers {
-  color: #999;
+  color: var(--color-content-2);
 }
 
 .form-booking__count-offers {
-  color: #cc9933;
+  color: var(--orange-color);
 }
 
 
@@ -298,7 +365,7 @@ html {
   margin-bottom: 24px;
   padding-bottom: 40px;
   min-height: 325px;
-  background-color: #fff;
+  background-color: var(--white-color);
   border-radius: 12px;
 }
 
@@ -325,7 +392,7 @@ html {
   padding-left: 43px;
   width: 76%;
   line-height: 32px;
-  color: #333;
+  color: var(--color-content-1);
 }
 
 /* section "advantages" */
@@ -337,23 +404,26 @@ html {
 .section-advantages__list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   align-content: space-between;
   margin-bottom: -24px;
+  color: var(--color-content-1);
 }
 
 .section-advantages__item {
-  flex-basis: calc(25% - 17px);
+  flex-basis: calc(25% - 18px);
   margin-bottom: 24px;
   padding: 120px 47px 42px 42px;
   min-height: 275px;
   line-height: 32px;
-  color: #333;
   border-radius: 12px;
-  background-color: #fff;
+  background-color: var(--white-color);
   background-size: auto 60px;
   background-repeat: no-repeat;
   background-position: 42px 40px;
+}
+
+.section-advantages__item:not(:nth-child(4n)) {
+  margin-right: 23px;
 }
 
 .section-advantages__item--icon-bathtub {
@@ -398,7 +468,7 @@ html {
 .section-accommodation__item {
   flex-basis: calc(33.33% - 16px);
   margin-bottom: 25px;
-  background-color: #fff;
+  background-color: var(--white-color);
   border-radius: 12px;
 }
 
@@ -416,22 +486,22 @@ html {
   padding-left: 44px;
   padding-right: 40px;
   line-height: 28px;
-  color: #999;
+  color: var(--color-content-2);
 }
 
 .section-accommodation-item__price {
   font-size: 22px;
   font-weight: bold;
-  color: #333;
+  color: var(--color-content-1);
 }
 
 .section-accommodation-item__unit {
   margin-right: 35px;
-  color: #333;
+  color: var(--color-content-1);
 }
 
 .section-accommodation-item__hotel-name {
-  color: #333;
+  color: var(--color-content-1);
 }
 
 .btn-link {
@@ -439,7 +509,19 @@ html {
   font-weight: bold;
   line-height: 1;
   border-radius: 12px;
-  border: 1px solid #cc9933;
+  border: 1px solid var(--orange-color);
+  transition-property: transform, box-shadow;
+  transition-duration: .2s;
+}
+
+.btn-link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-link:active {
+  transform: translateY(0);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 .section-accommodation-item__btn {
@@ -454,16 +536,18 @@ html {
 
 .section-accommodation-item__link-all-variant {
   position: absolute;
-  left: 40px;
-  bottom: 55px;
+  left: 0;
+  top: 0;
+  padding: 369px 56px 47px 40px;
+  width: 100%;
+  height: 100%;
   font-size: 22px;
   font-weight: 500;
-  color: #fff;
-  padding-right: 20px;
+  color: var(--white-color);
   background-image: url(../img/arrow_white.png);
   background-size: auto 16px;
   background-repeat: no-repeat;
-  background-position: right center;
+  background-position: 326px 374px;
 }
 
 /* section "contacts" */
@@ -480,7 +564,7 @@ html {
 .container-contacts {
   padding: 21px 46px 44px 44px;
   width: 472px;
-  background-color: #fff;
+  background-color: var(--white-color);
   border-radius: 12px;
 }
 
@@ -508,11 +592,11 @@ html {
   width: 232px;
   font-style: normal;
   line-height: 24px;
-  color: #333;
+  color: var(--color-content-1);
 }
 
 .section-contacts__info--color{
-  color: #999;
+  color: var(--color-content-2);
 }
 
 .section-contacts__btn {
@@ -553,12 +637,16 @@ html {
   display: flex;
   padding: 50px 53px 50px 52px;
   border-radius: 12px;
-  color: #fff;
-  background-color: #333;
+  color: var(--white-color);
+  background-color: var(--color-content-1);
   background-repeat: no-repeat;
   background-position: bottom right 176px;
   background-size: 258px 228px;
   background-image: url(../img/logo_footer.png);
+}
+
+.footer__privacy-policy {
+  line-height: 1;
 }
 
 .footer-left {
@@ -594,6 +682,12 @@ html {
   background-color: transparent;
   background-size: contain;
   background-position: center center;
+  opacity: 0.8;
+  transition: opacity .3s;
+}
+
+.footer__social-icon:hover {
+  opacity: 1;
 }
 
 .icon-tripadvisor {
