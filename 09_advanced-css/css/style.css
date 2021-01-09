@@ -682,12 +682,11 @@ html {
   background-color: transparent;
   background-size: contain;
   background-position: center center;
-  opacity: 0.8;
-  transition: opacity .3s;
+  transition: filter .3s;
 }
 
 .footer__social-icon:hover {
-  opacity: 1;
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.4))
 }
 
 .icon-tripadvisor {
