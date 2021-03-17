@@ -6,6 +6,12 @@
   <title>Евклид - проектные системы</title>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -59,6 +65,8 @@
     <main class="main">
 
       <section class="section-hero">
+        <!-- Slider main container -->
+        <div class="swiper-container">
           <div class="hero-container">
             <h1 class="section-hero__heading">Проектные решения любой сложности</h1>
             <p class="section-hero__description">
@@ -66,11 +74,16 @@
             </p>
             <a class="btn section-hero__btn btn-decor" href="">Заказать расчёт</a>
           </div>
-          <ul class="section-hero__slider-tabs">
-            <li class="section-hero__tabs-bottom section-hero__tabs-bottom--active"></li>
-            <li class="section-hero__tabs-bottom"></li>
-            <li class="section-hero__tabs-bottom"></li>
-          </ul>
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide background-img1"></div>
+            <div class="swiper-slide background-img2"></div>
+            <div class="swiper-slide background-img3"></div>
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+        </div>
       </section>
 
       <section class="section-about">
@@ -104,15 +117,15 @@
 
       <section class="section-work">
         <h2 class="section-heading section-work__heading">Как мы работаем</h2>
-        <nav class="nav-sect-work section-work__nav">
-          <ul class="nav-sect-work__list">
-            <li class="nav-sect-work__item nav-sect-work__item--active"><a class="nav-sect-work__link" href="">1 шаг</a></li>
-            <li class="nav-sect-work__item"><a class="nav-sect-work__link" href="">2 шаг</a></li>
-            <li class="nav-sect-work__item"><a class="nav-sect-work__link" href="">3 шаг</a></li>
-            <li class="nav-sect-work__item"><a class="nav-sect-work__link" href="">4 шаг</a></li>
+        <nav class="section-work__nav">
+          <ul class="tabs">
+            <li class="tabs__item tabs__item--active"><button class="tabs__btn btn-reset" data-path="one">1 шаг</button></li>
+            <li class="tabs__item"><button class="tabs__btn btn-reset" data-path="two">2 шаг</button></li>
+            <li class="tabs__item"><button class="tabs__btn btn-reset" data-path="three">3 шаг</button></li>
+            <li class="tabs__item"><button class="tabs__btn btn-reset" data-path="four">4 шаг</button></li>
           </ul>
         </nav>
-        <div class="row">
+        <div class="row tab-content tab-content--active" data-target="one">
           <div class="col-6 section-work__left-column">
             <div class="section-work__step">
               <h3 class="section-work__subtitle">Проводим консультацию</h3>
@@ -135,45 +148,137 @@
             </picture>
           </div>
         </div>
+        <div class="row tab-content" data-target="two">
+          <div class="col-6 section-work__left-column">
+            <div class="section-work__step">
+              <h3 class="section-work__subtitle">Составляем смету</h3>
+              <p class="section-work__desc">
+                Внедрения и модернизации приоритизации разума над эмоциями. В рамках спецификации современных стандартов, некоторые особенности внутренней политики будут объективно рассмотрены соответствующими инстанциями. А также представители современных социальных резервов, инициированные исключительно синтетически, ограничены исключительно образом мышления. Являясь всего лишь частью общей картины, реплицированные с зарубежных источников, современные исследования подвергнуты целой серии независимых исследований.
+              </p>
+            </div>
+            <div class="section-work__buttons">
+              <a class="btn section-work__btn-detailed btn-decor" href="">Подробнее</a>
+              <a class="btn section-work__btn-contract" href="">Договор</a>
+            </div>
+          </div>
+          <div class="col-6 section-work__right-column">
+            <picture class="section-work__colum-pic">
+              <img class="section-work__pic" src="./img/image3.jpg" aria-hidden="true" alt="">
+            </picture>
+          </div>
+        </div>
+        <div class="row tab-content" data-target="three">
+          <div class="col-6 section-work__left-column">
+            <div class="section-work__step">
+              <h3 class="section-work__subtitle">Привлекаем подрядчиков</h3>
+              <p class="section-work__desc">
+                Идейные соображения высшего порядка, а также новая модель организационной деятельности требует анализа прогресса профессионального сообщества. Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта: высококачественный прототип будущего проекта напрямую зависит от дальнейших направлений развития. Разнообразный и богатый опыт говорит нам, что новая модель организационной деятельности говорит о возможностях системы массового участия. Принимая во внимание показатели успешности, постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет выполнить важные задания по разработке прогресса профессионального сообщества.
+              </p>
+            </div>
+            <div class="section-work__buttons">
+              <a class="btn section-work__btn-detailed btn-decor" href="">Подробнее</a>
+              <a class="btn section-work__btn-contract" href="">Договор</a>
+            </div>
+          </div>
+          <div class="col-6 section-work__right-column">
+            <picture class="section-work__colum-pic">
+              <img class="section-work__pic" src="./img/image4.jpg" aria-hidden="true" alt="">
+            </picture>
+          </div>
+        </div>
+        <div class="row tab-content" data-target="four">
+          <div class="col-6 section-work__left-column">
+            <div class="section-work__step">
+              <h3 class="section-work__subtitle">Инспектируем все этапы работ</h3>
+              <p class="section-work__desc">
+                Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта: высококачественный прототип будущего проекта напрямую зависит от дальнейших направлений развития. Разнообразный и богатый опыт говорит нам, что новая модель организационной деятельности говорит о возможностях системы массового участия. Принимая во внимание показатели успешности, постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет.
+              </p>
+            </div>
+            <div class="section-work__buttons">
+              <a class="btn section-work__btn-detailed btn-decor" href="">Подробнее</a>
+              <a class="btn section-work__btn-contract" href="">Договор</a>
+            </div>
+          </div>
+          <div class="col-6 section-work__right-column">
+            <picture class="section-work__colum-pic">
+              <img class="section-work__pic" src="./img/image5.jpg" aria-hidden="true" alt="">
+            </picture>
+          </div>
+        </div>
       </section>
 
       <section class="section-questions">
         <h2 class="section-heading section-questions__heading">Часто задаваемые вопросы</h2>
         <ul class="section-questions__list">
           <li class="section-questions__item">
-            <h3 class="section-questions__subtitle">Из чего формируется конечная стоимость проекта?</h3>
-            <svg class="section-questions__x-pic" viewbox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="25" cy="25" r="25" fill="#ECECEC"/>
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M25.0571 24.0571L25.0571 9L25.9429 9L25.9429 24.0571L33.8835 24.0571L41 24.0571L41 24.9429L25.9429 24.9429L25.9429 40L25.0571 40L25.0571 24.9429L10 24.9429L10 24.0571L25.0571 24.0571Z" fill="#666666"/>
-            </svg>
+            <div class="section-questions__wrapper-subtitle">
+              <h3 class="section-questions__subtitle">Из чего формируется конечная стоимость проекта?</h3>
+              <svg class="section-questions__x-pic" viewbox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="25" cy="25" r="25" fill="#ECECEC"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M25.0571 24.0571L25.0571 9L25.9429 9L25.9429 24.0571L33.8835 24.0571L41 24.0571L41 24.9429L25.9429 24.9429L25.9429 40L25.0571 40L25.0571 24.9429L10 24.9429L10 24.0571L25.0571 24.0571Z" fill="#666666"/>
+              </svg>
+            </div>
+            <div class="section-questions__wrapper-desc">
+              <p class="section-questions__desc">
+                Являясь всего лишь частью общей картины, непосредственные участники технического прогресса призывают нас к новым свершениям, которые, в свою очередь, должны быть своевременно верифицированы. Но высококачественный прототип будущего проекта является качественно новой ступенью первоочередных требований. А ещё некоторые особенности внутренней политики, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут объявлены нарушающими общечеловеческие нормы этики и морали. И нет сомнений, что явные признаки победы институционализации призывают нас к новым свершениям, которые, в свою очередь, должны быть указаны как претенденты на роль ключевых факторов. <br><br> Приятно, граждане, наблюдать, как некоторые особенности внутренней политики могут быть призваны к ответу. Явные признаки победы институционализации набирают популярность среди определенных слоев населения, а значит, должны быть объединены в целые кластеры себе подобных. Банальные, но неопровержимые выводы, а также многие известные личности призывают нас к новым свершениям, которые, в свою очередь, должны быть представлены в исключительно положительном свете.
+              </p>
+            </div>
           </li>
           <li class="section-questions__item">
-            <h3 class="section-questions__subtitle">У меня есть свой проект. Сможем ли мы его доработать / реализовать?</h3>
-            <svg class="section-questions__x-pic" viewbox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="25" cy="25" r="25" fill="#ECECEC"/>
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M25.0571 24.0571L25.0571 9L25.9429 9L25.9429 24.0571L33.8835 24.0571L41 24.0571L41 24.9429L25.9429 24.9429L25.9429 40L25.0571 40L25.0571 24.9429L10 24.9429L10 24.0571L25.0571 24.0571Z" fill="#666666"/>
-            </svg>
+            <div class="section-questions__wrapper-subtitle">
+              <h3 class="section-questions__subtitle">У меня есть свой проект. Сможем ли мы его доработать / реализовать?</h3>
+              <svg class="section-questions__x-pic" viewbox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="25" cy="25" r="25" fill="#ECECEC"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M25.0571 24.0571L25.0571 9L25.9429 9L25.9429 24.0571L33.8835 24.0571L41 24.0571L41 24.9429L25.9429 24.9429L25.9429 40L25.0571 40L25.0571 24.9429L10 24.9429L10 24.0571L25.0571 24.0571Z" fill="#666666"/>
+              </svg>
+            </div>
+            <div class="section-questions__wrapper-desc">
+              <p class="section-questions__desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa eum in eaque beatae sed eligendi perspiciatis sequi voluptates minima. Nam qui iure dolor aperiam distinctio excepturi architecto praesentium temporibus eligendi!
+              </p>
+            </div>
           </li>
           <li class="section-questions__item">
-            <h3 class="section-questions__subtitle">Я выбираю между разными компаниями. В чём ваше отличие?</h3>
-            <svg class="section-questions__x-pic" viewbox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="25" cy="25" r="25" fill="#ECECEC"/>
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M25.0571 24.0571L25.0571 9L25.9429 9L25.9429 24.0571L33.8835 24.0571L41 24.0571L41 24.9429L25.9429 24.9429L25.9429 40L25.0571 40L25.0571 24.9429L10 24.9429L10 24.0571L25.0571 24.0571Z" fill="#666666"/>
-            </svg>
+            <div class="section-questions__wrapper-subtitle">
+              <h3 class="section-questions__subtitle">Я выбираю между разными компаниями. В чём ваше отличие?</h3>
+              <svg class="section-questions__x-pic" viewbox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="25" cy="25" r="25" fill="#ECECEC"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M25.0571 24.0571L25.0571 9L25.9429 9L25.9429 24.0571L33.8835 24.0571L41 24.0571L41 24.9429L25.9429 24.9429L25.9429 40L25.0571 40L25.0571 24.9429L10 24.9429L10 24.0571L25.0571 24.0571Z" fill="#666666"/>
+              </svg>
+            </div>
+            <div class="section-questions__wrapper-desc">
+              <p class="section-questions__desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum aut earum consectetur aperiam placeat consequatur ducimus ab, pariatur iusto veniam. Pariatur sunt quos ipsa quam illo molestiae harum aliquam impedit!
+              </p>
+            </div>
           </li>
           <li class="section-questions__item">
-            <h3 class="section-questions__subtitle">Могу ли я делегировать вам работу / согласование с&nbsp;подрядчиком / организацией?</h3>
-            <svg class="section-questions__x-pic" viewbox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="25" cy="25" r="25" fill="#ECECEC"/>
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M25.0571 24.0571L25.0571 9L25.9429 9L25.9429 24.0571L33.8835 24.0571L41 24.0571L41 24.9429L25.9429 24.9429L25.9429 40L25.0571 40L25.0571 24.9429L10 24.9429L10 24.0571L25.0571 24.0571Z" fill="#666666"/>
-            </svg>
+            <div class="section-questions__wrapper-subtitle">
+              <h3 class="section-questions__subtitle">Могу ли я делегировать вам работу / согласование с&nbsp;подрядчиком / организацией?</h3>
+              <svg class="section-questions__x-pic" viewbox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="25" cy="25" r="25" fill="#ECECEC"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M25.0571 24.0571L25.0571 9L25.9429 9L25.9429 24.0571L33.8835 24.0571L41 24.0571L41 24.9429L25.9429 24.9429L25.9429 40L25.0571 40L25.0571 24.9429L10 24.9429L10 24.0571L25.0571 24.0571Z" fill="#666666"/>
+              </svg>
+            </div>
+            <div class="section-questions__wrapper-desc">
+              <p class="section-questions__desc">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore praesentium asperiores, animi laboriosam fugiat nostrum delectus cumque. Est, beatae magnam. Eligendi ad maiores repellat delectus aperiam dolores expedita quasi ex!
+            </p>
+            </div>
           </li>
           <li class="section-questions__item">
-            <h3 class="section-questions__subtitle">Могу ли я вернуть деньги на&nbsp;каком-либо из этапов работ?</h3>
-            <svg class="section-questions__x-pic" viewbox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="25" cy="25" r="25" fill="#ECECEC"/>
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M25.0571 24.0571L25.0571 9L25.9429 9L25.9429 24.0571L33.8835 24.0571L41 24.0571L41 24.9429L25.9429 24.9429L25.9429 40L25.0571 40L25.0571 24.9429L10 24.9429L10 24.0571L25.0571 24.0571Z" fill="#666666"/>
-            </svg>
+            <div class="section-questions__wrapper-subtitle">
+              <h3 class="section-questions__subtitle">Могу ли я вернуть деньги на&nbsp;каком-либо из этапов работ?</h3>
+              <svg class="section-questions__x-pic" viewbox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="25" cy="25" r="25" fill="#ECECEC"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M25.0571 24.0571L25.0571 9L25.9429 9L25.9429 24.0571L33.8835 24.0571L41 24.0571L41 24.9429L25.9429 24.9429L25.9429 40L25.0571 40L25.0571 24.9429L10 24.9429L10 24.0571L25.0571 24.0571Z" fill="#666666"/>
+              </svg>
+            </div>
+            <div class="section-questions__wrapper-desc">
+              <p class="section-questions__desc">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores reprehenderit at quasi praesentium, voluptates culpa voluptatum aliquid officiis tenetur ipsam, saepe fuga. Iusto labore, eos dicta illo nesciunt deserunt aspernatur?
+            </p>
+            </div>
           </li>
         </ul>
       </section>
@@ -247,6 +352,8 @@
       </div>
     </div>
   </footer>
-
+  <script src="js/swiper.js"></script>
+  <script src="js/tabs.js"></script>
+  <script src="js/accordion.js"></script>
 </body>
 </html>
